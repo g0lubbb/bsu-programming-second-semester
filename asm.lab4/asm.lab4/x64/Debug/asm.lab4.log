@@ -1,0 +1,4 @@
+﻿  Assembling ..\..\test.asm...
+..\..\test.asm(1): error A2008: syntax error : .
+..\..\test.asm(3): error A2008: syntax error : .
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\BuildCustomizations\masm.targets(70,5): error MSB3721: выход из команды "ml64.exe /c /nologo /Zi /Fo"x64\Debug\test.obj" /W3 /errorReport:prompt  /Ta..\..\test.asm" с кодом "1".
