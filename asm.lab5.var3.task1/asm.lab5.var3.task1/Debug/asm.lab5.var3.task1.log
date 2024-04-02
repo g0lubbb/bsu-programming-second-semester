@@ -1,0 +1,3 @@
+﻿  asm.lab5.var3.task1.cpp
+C:\Users\User\Desktop\asm.lab5.var3.task1\asm.lab5.var3.task1\asm.lab5.var3.task1.cpp(6,52): warning C4305: инициализация: усечение из "double" в "float"
+  asm.lab5.var3.task1.vcxproj -> C:\Users\User\Desktop\asm.lab5.var3.task1\Debug\asm.lab5.var3.task1.exe
