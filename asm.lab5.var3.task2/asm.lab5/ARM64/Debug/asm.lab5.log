@@ -1,0 +1,81 @@
+﻿  asm.lab5.cpp
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(6,52): warning C4305: инициализация: усечение из "double" в "float"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(8,5): error C4235: использовано нестандартное расширение: ключевое слово "__asm" данной архитектурой не поддерживается
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(10,9): error C2065: mov: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(10,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "ebx"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(10,13): error C2065: ebx: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(11,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "mov"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(11,13): error C2065: mov: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(11,17): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "ecx"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(11,17): error C2065: ecx: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(12,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "cmp"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(12,13): error C2065: cmp: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(12,17): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "ecx"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(12,17): error C2065: ecx: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(12,22): error C2065: ebx: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(13,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "jg"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(13,13): error C2065: jg: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(13,16): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "end"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(13,16): error C2065: end: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(14,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "fild"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(14,13): error C2065: fild: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(14,18): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "k"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(15,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "fimul"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(15,13): error C2065: fimul: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(15,19): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "two"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(16,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "fisub"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(16,13): error C2065: fisub: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(16,19): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "one"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(17,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "fistp"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(17,13): error C2065: fistp: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(17,19): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "res1"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(18,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "fld1"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(18,13): error C2065: fld1: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(19,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "fdiv"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(19,13): error C2065: fdiv: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(19,18): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "res1"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(20,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "fstp"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(20,13): error C2065: fstp: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(20,18): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "sum_element"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(21,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "fld"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(21,13): error C2065: fld: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(21,17): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "sum_element"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(21,36): error C2065: finding: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(21,44): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "the"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(21,44): error C2065: the: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(21,48): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "sum"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(21,52): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "element"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(21,52): error C2065: element: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(22,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "fld"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(22,13): error C2065: fld: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(22,17): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "sum"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(23,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "fadd"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(23,13): error C2065: fadd: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(24,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "fstp"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(24,13): error C2065: fstp: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(24,18): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "sum"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(25,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "fild"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(25,13): error C2065: fild: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(25,18): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "k"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(26,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "fiadd"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(26,13): error C2065: fiadd: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(26,19): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "one"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(27,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "fistp"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(27,13): error C2065: fistp: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(27,19): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "k"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(28,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "jmp"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(28,13): error C2065: jmp: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(28,17): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "start"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(28,17): error C2065: start: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(31,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "end"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(32,9): error C2065: fldpi: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(33,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "fmul"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(33,13): error C2065: fmul: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(33,18): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "pi"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(34,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "fdiv"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(34,13): error C2065: fdiv: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(34,18): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "eight"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(35,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "fstp"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(35,13): error C2065: fstp: необъявленный идентификатор
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(35,18): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "res"
+C:\Users\Дмитрий\source\repos\asm.lab5\asm.lab5\asm.lab5.cpp(36,5): error C2143: синтаксическая ошибка: отсутствие ";" перед "}"
