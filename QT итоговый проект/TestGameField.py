@@ -260,6 +260,22 @@ class GameField(QWidget):
             with open(file_path, 'w') as file:
                 json.dump(game_state, file, indent=4)
 
+    def saveGameState(self):
+        file_dialog = QFileDialog()
+        file_path, _ = file_dialog.getSaveFileName(self, "Сохранить состояние игры", "", "JSON Files (*.json)")
+
+        if file_path:
+            active_cell = self.getActiveCell()  # Получаем текущую активную клетку
+            game_state = {
+                'currentPlayer': self.currentPlayer,
+                'board': [[cell.board for cell in row] for row in self.cells],
+                'winners': [[cell.winner for cell in row] for row in self.cells],
+                'gameActive': self.gameActive,
+                'activeCell': active_cell
+            }
+            with open(file_path, 'w') as file:
+                json.dump(game_state, file, indent=4)
+
     def loadGameState(self):
         file_dialog = QFileDialog()
         file_path, _ = file_dialog.getOpenFileName(self, "Загрузить состояние игры", "", "JSON Files (*.json)")
@@ -287,13 +303,23 @@ class GameField(QWidget):
                                 self.cells[i][j].winnerLabel.hide()
                     self.setColors(self.colors)
                     self.update()
+                    
                     if self.gameActive:
-                        self.setNextActiveCell(0, 0)
+                        active_cell = game_state['activeCell']
+                        self.setActiveCell(active_cell[0], active_cell[1])
+                    
                     self.setStartButtonActive(False)
                     self.gameLoaded = True
+
             except FileNotFoundError:
                 QMessageBox.warning(self, "Load Game", "No saved game found!")
 
+    def getActiveCell(self):
+        for i in range(3):
+            for j in range(3):
+                if self.cells[i][j].isActive:
+                    return (i, j)
+        return (0, 0)
     def saveColorSettings(self):
         file_dialog = QFileDialog()
         file_path, _ = file_dialog.getSaveFileName(self, "Сохранить цветовые настройки", "", "JSON Files (*.json)")
@@ -320,4 +346,5 @@ class GameField(QWidget):
                     self.update()
             except FileNotFoundError:
                 QMessageBox.warning(self, "Load Colors", "No saved colors found!")
-    
+        
+ 
