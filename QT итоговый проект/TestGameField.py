@@ -217,9 +217,9 @@ class GameField(QWidget):
     def checkDraw(self):
         for row in self.cells:
             for cell in row:
-                if cell.isDraw():
-                    return True
-        return False
+                if not cell.isDraw() and cell.winner is None:
+                    return False
+        return True
 
     def checkGlobalGameEnd(self):
         winner = self.checkOverallWinner()
@@ -251,21 +251,7 @@ class GameField(QWidget):
         file_path, _ = file_dialog.getSaveFileName(self, "Сохранить состояние игры", "", "JSON Files (*.json)")
 
         if file_path:
-            game_state = {
-                'currentPlayer': self.currentPlayer,
-                'board': [[cell.board for cell in row] for row in self.cells],
-                'winners': [[cell.winner for cell in row] for row in self.cells],
-                'gameActive': self.gameActive
-            }
-            with open(file_path, 'w') as file:
-                json.dump(game_state, file, indent=4)
-
-    def saveGameState(self):
-        file_dialog = QFileDialog()
-        file_path, _ = file_dialog.getSaveFileName(self, "Сохранить состояние игры", "", "JSON Files (*.json)")
-
-        if file_path:
-            active_cell = self.getActiveCell()  
+            active_cell = self.getActiveCell()
             game_state = {
                 'currentPlayer': self.currentPlayer,
                 'board': [[cell.board for cell in row] for row in self.cells],
@@ -320,6 +306,7 @@ class GameField(QWidget):
                 if self.cells[i][j].isActive:
                     return (i, j)
         return (0, 0)
+
     def saveColorSettings(self):
         file_dialog = QFileDialog()
         file_path, _ = file_dialog.getSaveFileName(self, "Сохранить цветовые настройки", "", "JSON Files (*.json)")
@@ -346,5 +333,3 @@ class GameField(QWidget):
                     self.update()
             except FileNotFoundError:
                 QMessageBox.warning(self, "Load Colors", "No saved colors found!")
-        
- 
