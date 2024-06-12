@@ -1,5 +1,5 @@
 import json
-from PyQt6.QtWidgets import QLabel, QWidget, QPushButton, QGridLayout, QMessageBox, QColorDialog, QVBoxLayout
+from PyQt6.QtWidgets import QLabel, QWidget, QPushButton, QGridLayout, QMessageBox, QColorDialog, QVBoxLayout, QFileDialog
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont, QPainter, QColor
 
@@ -103,6 +103,7 @@ class GameField(QWidget):
         self.colors = {'X': 'black', 'O': 'black'}
         self.backgroundColor = QColor("grey")
         self.gameActive = False
+        self.gameLoaded = False
 
         for i in range(3):
             for j in range(3):
@@ -194,6 +195,7 @@ class GameField(QWidget):
                 self.cells[i][j].setActive(True)
         self.currentPlayer = 'X'
         self.gameActive = False
+        self.gameLoaded = False
         self.setStartButtonActive(True)
 
     def setStartButtonActive(self, active):
@@ -245,68 +247,77 @@ class GameField(QWidget):
         msgBox.exec()
 
     def saveGameState(self):
-        print("Saving game state...")
-        game_state = {
-            'currentPlayer': self.currentPlayer,
-            'board': [[cell.board for cell in row] for row in self.cells],
-            'winners': [[cell.winner for cell in row] for row in self.cells],
-            'gameActive': self.gameActive
-        }
-        with open('game_state.json', 'w') as file:
-            json.dump(game_state, file, indent=4)
-        print("Game state saved.")
+        file_dialog = QFileDialog()
+        file_path, _ = file_dialog.getSaveFileName(self, "Сохранить состояние игры", "", "JSON Files (*.json)")
+
+        if file_path:
+            game_state = {
+                'currentPlayer': self.currentPlayer,
+                'board': [[cell.board for cell in row] for row in self.cells],
+                'winners': [[cell.winner for cell in row] for row in self.cells],
+                'gameActive': self.gameActive
+            }
+            with open(file_path, 'w') as file:
+                json.dump(game_state, file, indent=4)
 
     def loadGameState(self):
-        print("Loading game state...")
-        try:
-            with open('game_state.json', 'r') as file:
-                game_state = json.load(file)
-                self.currentPlayer = game_state['currentPlayer']
-                self.gameActive = game_state['gameActive']
-                for i in range(3):
-                    for j in range(3):
-                        self.cells[i][j].board = game_state['board'][i][j]
-                        self.cells[i][j].winner = game_state['winners'][i][j]
-                        for x in range(3):
-                            for y in range(3):
-                                self.cells[i][j].buttons[x][y].setText(self.cells[i][j].board[x][y])
-                                if self.cells[i][j].board[x][y] != '':
-                                    self.cells[i][j].buttons[x][y].setStyleSheet(
-                                        f"color: {self.colors[self.cells[i][j].board[x][y]]};"
-                                    )
-                        if self.cells[i][j].winner:
-                            self.cells[i][j].showWinnerInCell(self.cells[i][j].winner)
-                        else:
-                            self.cells[i][j].winnerLabel.hide()
-                self.setColors(self.colors)
-                self.update()
-                if self.gameActive:
-                    self.setNextActiveCell(0, 0)
-                print("Game state loaded.")
-        except FileNotFoundError:
-            QMessageBox.warning(self, "Load Game", "No saved game found!")
-            print("No saved game found!")
+        file_dialog = QFileDialog()
+        file_path, _ = file_dialog.getOpenFileName(self, "Загрузить состояние игры", "", "JSON Files (*.json)")
+
+        if file_path:
+            try:
+                with open(file_path, 'r') as file:
+                    game_state = json.load(file)
+                    self.currentPlayer = game_state['currentPlayer']
+                    self.gameActive = game_state['gameActive']
+                    for i in range(3):
+                        for j in range(3):
+                            self.cells[i][j].board = game_state['board'][i][j]
+                            self.cells[i][j].winner = game_state['winners'][i][j]
+                            for x in range(3):
+                                for y in range(3):
+                                    self.cells[i][j].buttons[x][y].setText(self.cells[i][j].board[x][y])
+                                    if self.cells[i][j].board[x][y] != '':
+                                        self.cells[i][j].buttons[x][y].setStyleSheet(
+                                            f"color: {self.colors[self.cells[i][j].board[x][y]]};"
+                                        )
+                            if self.cells[i][j].winner:
+                                self.cells[i][j].showWinnerInCell(self.cells[i][j].winner)
+                            else:
+                                self.cells[i][j].winnerLabel.hide()
+                    self.setColors(self.colors)
+                    self.update()
+                    if self.gameActive:
+                        self.setNextActiveCell(0, 0)
+                    self.setStartButtonActive(False)
+                    self.gameLoaded = True
+            except FileNotFoundError:
+                QMessageBox.warning(self, "Load Game", "No saved game found!")
 
     def saveColorSettings(self):
-        print("Saving color settings...")
-        color_settings = {
-            'colors': self.colors,
-            'backgroundColor': self.backgroundColor.name()
-        }
-        with open('color_settings.json', 'w') as file:
-            json.dump(color_settings, file, indent=4)
-        print("Color settings saved.")
+        file_dialog = QFileDialog()
+        file_path, _ = file_dialog.getSaveFileName(self, "Сохранить цветовые настройки", "", "JSON Files (*.json)")
+
+        if file_path:
+            color_settings = {
+                'colors': self.colors,
+                'backgroundColor': self.backgroundColor.name()
+            }
+            with open(file_path, 'w') as file:
+                json.dump(color_settings, file, indent=4)
 
     def loadColorSettings(self):
-        print("Loading color settings...")
-        try:
-            with open('color_settings.json', 'r') as file:
-                color_settings = json.load(file)
-                self.colors = color_settings['colors']
-                self.backgroundColor = QColor(color_settings['backgroundColor'])
-                self.setColors(self.colors)
-                self.update()
-            print("Color settings loaded.")
-        except FileNotFoundError:
-            QMessageBox.warning(self, "Load Colors", "No saved color settings found!")
-            print("No saved color settings found!")
+        file_dialog = QFileDialog()
+        file_path, _ = file_dialog.getOpenFileName(self, "Загрузить цветовые настройки", "", "JSON Files (*.json)")
+
+        if file_path:
+            try:
+                with open(file_path, 'r') as file:
+                    color_settings = json.load(file)
+                    self.colors = color_settings['colors']
+                    self.backgroundColor = QColor(color_settings['backgroundColor'])
+                    self.setColors(self.colors)
+                    self.update()
+            except FileNotFoundError:
+                QMessageBox.warning(self, "Load Colors", "No saved colors found!")
+    
