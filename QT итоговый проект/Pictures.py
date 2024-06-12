@@ -40,7 +40,12 @@ class Picture(QWidget):
             self.pixmap = self.pixmap.scaled(250, 250, Qt.AspectRatioMode.KeepAspectRatio)
             self.label.setPixmap(self.pixmap)
 
-    def saveProfile(self, filename="profiles.json"):
+    def saveProfile(self):
+        fileDialog = QFileDialog()
+        filename, _ = fileDialog.getSaveFileName(self, "Save Profile", "", "JSON Files (*.json)")
+        if not filename:
+            return
+
         profile_data = {
             f"player_{self.number_of_player}": {
                 "username": self.playerName.text(),
@@ -59,8 +64,10 @@ class Picture(QWidget):
         with open(filename, "w") as file:
             json.dump(data, file, indent=4)
 
-    def loadProfile(self, filename="profiles.json"):
-        if not os.path.exists(filename):
+    def loadProfile(self):
+        fileDialog = QFileDialog()
+        filename, _ = fileDialog.getOpenFileName(self, "Load Profile", "", "JSON Files (*.json)")
+        if not filename:
             return
 
         with open(filename, "r") as file:
