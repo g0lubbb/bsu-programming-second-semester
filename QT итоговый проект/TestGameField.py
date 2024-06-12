@@ -265,7 +265,7 @@ class GameField(QWidget):
         file_path, _ = file_dialog.getSaveFileName(self, "Сохранить состояние игры", "", "JSON Files (*.json)")
 
         if file_path:
-            active_cell = self.getActiveCell()  # Получаем текущую активную клетку
+            active_cell = self.getActiveCell()  
             game_state = {
                 'currentPlayer': self.currentPlayer,
                 'board': [[cell.board for cell in row] for row in self.cells],
